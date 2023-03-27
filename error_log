@@ -1,0 +1,4 @@
+[09-Mar-2023 14:37:37 UTC] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 24576 bytes) in /home2/redepz1r/public_html/system/core/Loader.php on line 969
+[09-Mar-2023 14:37:48 UTC] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 24576 bytes) in /home2/redepz1r/public_html/system/core/Loader.php on line 969
+[09-Mar-2023 14:37:49 UTC] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 24576 bytes) in /home2/redepz1r/public_html/system/core/Loader.php on line 969
+[09-Mar-2023 14:38:57 UTC] PHP Fatal error:  Allowed memory size of 536870912 bytes exhausted (tried to allocate 12288 bytes) in /home2/redepz1r/public_html/application/views/vistas/agenda.php on line 540

@@ -1,0 +1,30 @@
+#footer{
+	background: #242c5c;
+	padding-top: 50px; padding-bottom: 50px;
+}
+
+#footer h3{
+	color:white;
+}
+#footer label{
+	color:white;
+	margin-bottom: 4px;
+}
+
+#footer li{
+	padding-left: 0px;
+	list-style: none;
+	color:white; font-size: 18px;
+	margin-top: 10px; margin-bottom: 10px;
+}
+
+.fa-envelope{
+	margin-left: 5px;
+}
+.fa-phone{
+	margin-left: 5px;
+}
+
+.fa-globe{
+	margin-left: 5px;
+}

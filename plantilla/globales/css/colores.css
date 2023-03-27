@@ -1,0 +1,52 @@
+body{
+  
+    overflow-x:hidden;
+    background-image: url(http://localhost/fupdeco/plantilla_front/img/marca.png);
+    background-size:8%; background-attachment: fixed;
+} 
+.cinta-superior{
+    background:#162e70;
+    color:white; font-weight:bolder
+}
+
+.navbar{
+    border-bottom:solid 3px #162e70
+}
+
+.fw-medium{
+    color:#162e70; font-weight:bolder; font-size:18px
+}
+.cinta-superior .fa{
+    color:white
+}
+.cinta-superior .fab{
+    color:white;
+}
+.btn-principal{
+    background:#ec716e;
+    color:white; font-weight:bolder; border:none
+}
+.fondo-primario{
+    background: #e3221c; border:none
+}
+.texto-primario{
+    color:#e3221c;
+}
+.texto-secundario{
+    color: #76a46e 
+}
+.service-icon{
+    
+    cursor:pointer
+ 
+    
+    
+}
+
+
+#footer .form-control , label{
+    
+    color:black; 
+}
+
+

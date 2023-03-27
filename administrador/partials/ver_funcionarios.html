@@ -1,0 +1,271 @@
+<div class="row">
+    <div class="col-xl-12 col-lg-21 col-md-12 col-sm-12 col-12  m-auto">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="text-center text-light" style="position:relative; top:4px">Ver Funcionarios</h4>
+            </div>
+            <div class="card-body table-responsive">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center"
+                                style="border:solid 0.5px gray; text-decoration:underline">Orden</th>
+                            <th scope="col" class="text-center"
+                                style="border:solid 0.5px gray; text-decoration:underline">Funcionario</th>
+                            <th scope="col" class="text-center"
+                                style="border:solid 0.5px gray; text-decoration:underline">Cargo</th>
+                            <th scope="col" class="text-center"
+                                style="border:solid 0.5px gray; text-decoration:underline">Creación</th>
+                            <th scope="col" class="text-center"
+                                style="border:solid 0.5px gray; text-decoration:underline">Foto</th>
+                                <th scope="col" class="text-center"
+                                style="border:solid 0.5px gray; text-decoration:underline">Editar</th>
+                            <th scope="col" class="text-center"
+                                style="border:solid 0.5px gray; text-decoration:underline">Borrar</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider" id="listado-funcionarios">
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    $(document).ready(function () {
+
+
+
+        $("#contenedor-carga").hide();
+        // Carga los archivos multimedia para usarse
+        $("#abrir-multimedia").click(function () {
+            $("#contenedor-carga").toggle();
+            cargar_archivos_multimedia();
+            if ($('#contenedor-carga').is(':visible')) {
+                $("#abrir-multimedia").text("Cerrar Galería -");
+            } else {
+                $("#abrir-multimedia").text("Abrir Galería +");
+            }
+        });
+
+        function cargar_archivos_multimedia() {
+            $.ajax({
+                type: 'POST',  // Envío con método POST
+                url: 'aplicacion/controllers/routes/routes.php',  // Fichero destino (el PHP que trata los datos)
+                data: { peticion: 6 } // Datos que se envían
+            }).done(function (msg) {  // Función que se ejecuta si todo ha ido bien
+
+                $("#contenedor-carga").html(msg);  // Escribimos en el div consola el mensaje devuelto
+                $(".imagen-archivo").each(function () {
+
+                    var tipo_elemento = $(this).attr("id");
+                    if (tipo_elemento == 1) {
+                        var ruta = $(this).attr("src");
+                        var ruta_nueva = ruta.slice(28)
+                        var new_string = "aplicacion/biblioteca/multimedia/" + ruta_nueva;
+                        $(this).attr("src", new_string);
+                    }
+
+                    if (tipo_elemento == 3) {
+
+                        $(this).parent().remove();
+                    }
+
+
+                });
+
+                $(".capa").click(function(){
+var ruta_imagen_carga = $(this).parent().children(".imagen-archivo").attr("src");
+
+$(".imagen-archivo").css("border","none");
+$(this).parent().children(".imagen-archivo").css("border","solid 2px red");
+$("#ruta-seleccionada").removeAttr("disabled");
+$("#ruta-seleccionada").val(ruta_imagen_carga);
+$("#ruta-visible").val(ruta_imagen_carga);
+//$("#ruta-seleccionada").attr("disabled","disabled");
+var tipo_elemento = $(this).parent().children(".imagen-archivo").attr("id");
+$(".tipo-archivo-sel").val(tipo_elemento);
+
+
+});
+
+
+
+            }).fail(function (jqXHR, textStatus, errorThrown) { // Función que se ejecuta si algo ha ido mal
+                // Mostramos en consola el mensaje con el error que se ha producido
+                $("#listado-archivos-multimedia").html("The following error occured: " + textStatus + " " + errorThrown);
+
+
+            });
+        };
+
+        $.ajax({
+            type: 'POST',  // Envío con método POST
+            url: 'aplicacion/controllers/routes/routes.php',  // Fichero destino (el PHP que trata los datos)
+            data: { peticion: 8 } // Datos que se envían
+        }).done(function (msg) {  // Función que se ejecuta si todo ha ido bien
+
+            $("#listado-funcionarios").html(msg);  // Escribimos en el div consola el mensaje devuelto
+$(".btn-danger , .btn-warning").click(function(){
+     var ancho =  $(window).width();
+
+     
+
+   var  porcentaje = (ancho * 70) / 100;
+
+   var ancho_modal = porcentaje+"px";
+$(".modal-dialog").css("max-width",ancho_modal);
+    });
+            $(".btn-editar-funcionario").click(function () {
+
+                var id = $(this).attr("title");
+                $.ajax({
+                    type: 'POST',  // Envío con método POST
+                    url: 'aplicacion/controllers/routes/routes.php',  // Fichero destino (el PHP que trata los datos)
+                    data: { peticion: 9, funcionario_id: id } // Datos que se envían
+                }).done(function (msg) {  // Función que se ejecuta si todo ha ido bien
+
+                    $(".data").html(msg);  // Escribimos en el div consola el mensaje devuelto
+
+                }).fail(function (jqXHR, textStatus, errorThrown) { // Función que se ejecuta si algo ha ido mal
+                    // Mostramos en consola el mensaje con el error que se ha producido
+                    $(".data").html("The following error occured: " + textStatus + " " + errorThrown);
+
+
+                });
+
+            });
+
+            $('.btn-eliminar-funcionario').click(function () {
+
+                var id = $(this).attr('title');
+
+                $('.data-id').attr("value", id);
+
+
+
+            });
+
+            $("#btn-confirmar-eliminar-funcionario").click(function () {
+                $("#submit-eliminar-funcionario").click();
+            });
+
+
+
+
+        }).fail(function (jqXHR, textStatus, errorThrown) { // Función que se ejecuta si algo ha ido mal
+            // Mostramos en consola el mensaje con el error que se ha producido
+            $("#listado-funcionarios").html("The following error occured: " + textStatus + " " + errorThrown);
+
+
+        });
+
+
+
+
+
+    });
+</script>
+<div class="data d-none" style="width: 100%">
+
+</div>
+<div class="modal fade modal-xl" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Edicion de registro</h1>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="text-center text-light" style="position:relative; top:4px">Edición de Funcionario
+                        </h6>
+                    </div>
+                    <div class="card-body">
+                        <form action="aplicacion/controllers/routes/routes.php" method="post">
+                            <div class="form-group col-xl-6 col-md-12 col-sm-12 col-12 p-1 mt-2 mb-2"
+                                style="float:left;">
+                                <label for="">Nombre completo</label>
+                                <input type="text" class="form-control" placeholder="Nombre completo del funcionario"
+                                    required name="nombre_funcionario" id="nombre">
+                                <input type="hidden" value="10" name="peticion">
+                                <input type="hidden" id="id" name="funcionario_id">
+                            </div>
+                            <div class="form-group col-xl-6 col-md-12 col-sm-12 col-12 p-1 mt-2 mb-2"
+                                style="float:left;">
+                                <label for="">Cargo</label>
+                                <input type="text" class="form-control" placeholder="Cargo del funcionario" required
+                                    name="cargo" id="cargo">
+                            </div>
+                            <div class="p-1">
+                                <label for="">Carge imagen de perfil</label>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <center><span class="text-center">Archivos multimedia</span></center>
+                                        <input type="hidden" class="form-control foto-sel" placeholder="SELECCION"
+                                            id="ruta-seleccionada" required name="foto_perfil">
+                                        <input type="text" class="form-control" id="ruta-visible" disabled
+                                            value="No se ha seleccionado ninguna ruta"
+                                            style="color:red; font-weight:bolder">
+                                        <button class="btn btn-primary" type="button" style="width:100%"
+                                            id="abrir-multimedia">Abrir galería +</button>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row" id="contenedor-carga">
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                        <label for="">Orden</label>
+                        <input type="number" required name="orden" class="form-control" id="orden">
+                    </div>
+                            <div class="form-group">
+                                <center> <button type="submit" class="btn btn-warning text-center"
+                                        style="position:fixed; bottom:0; right:0; height:75px; width:75px; border-radius:50%; font-size:30px"><span
+                                            class="fa fa-pencil"></span></button></center>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="exampleModal-eliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminación de funcionario</h1>
+                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="aplicacion/controllers/routes/routes.php" method="post">
+                    <span>¿Deseas eliminar este funcionario?</span>
+                    <input type="hidden" class="form-control data-id" name="funcionario_id">
+                    <input type="hidden" class="form-control " name="peticion" value="11">
+                    <input type="submit" class="d-none" id="submit-eliminar-funcionario">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="btn-confirmar-eliminar-funcionario">Eliminar
+                    Registro</button>
+            </div>
+        </div>
+    </div>
+</div>

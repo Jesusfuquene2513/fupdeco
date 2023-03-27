@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    	<link rel="icon" href="ico.ico"  type="image/icon type">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="plantilla_front/librerias/boostrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="plantilla_front/css/colores.css">
+  <link rel="stylesheet" href="plantilla_front/css/tamano.css">
+  <link rel="stylesheet" href="plantilla_front/css/letras.css">
+  <link rel="stylesheet" href="plantilla_front/css/hr.css">
+   <link rel="stylesheet" href="plantilla_front/css/team.css">
+     <link rel="stylesheet" href="plantilla_front/css/servicio.css">
+     <link rel="stylesheet" href="plantilla_front/css/wasap.css">
+      <link rel="stylesheet" href="plantilla_front/css/cer.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+  <link rel="stylesheet" href="librerias/swipebox-master/src/css/swipebox.css">
+  <title>Redepyme</title>
+  <style type="text/css">
+      .formulario-campos .form-control{
+    height: 40px;
+}
+.elemento-blog{
+height: 350px;
+}
+.img-galery{
+
+  height: 350px;
+}
+  </style>
+
+
+</head>
+<body>
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-12">
+      <li id="1" class="album-randon">Hola</li>
+      <li id="1" class="album-randon">Hola</li>
+      <li id="1" class="album-randon">Hola</li>
+      <li id="1" class="album-randon">Hola</li>
+      <li id="3" class="album-randon">Hola</li>
+      <li id="3" class="album-randon">Hola</li>
+      <li id="2" class="album-randon">Hola</li>
+      <li id="2" class="album-randon">Hola</li>
+      
+     
+    </div>
+  </div>
+</div>
+  
+</body>
+
+<script src="plantilla_front/librerias/js/jquery.min.js" ></script>
+<script src="plantilla_front/librerias/boostrap/js/bootstrap.bundle.min.js"></script>
+<script src="plantilla_front/js/wasap.js"></script>
+<script src="plantilla_front/js/redes_sociales.js"></script>
+<script src="plantilla_front/js/cer.js"></script>
+<script src="plantilla_front/js/blog_master.js"></script>
+<script src="plantilla_front/js/fecha.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+
+<script>
+  $(document).ready(function(){
+   
+  var albumnes=[];
+
+  $(".album-randon").each(function(index){
+
+          id=$(this).attr("id");
+          
+          albumnes.push(id);
+
+     });
+
+var quitar =  _.uniq(albumnes);
+
+var html = 0;
+
+$.each(quitar, function(indice, value){
+     html = value;
+  var elemento = document.getElementById(html);
+  var id3 = $(elemento).attr("id");
+
+ elemento2 = document.getElementById(html);
+ $(elemento2).css("color","blue");
+ 
+
+      $(".album-randon").each(function(index){
+
+
+
+var id2 = $(this).attr("id");
+//alert(id2);
+
+if(id2 == elemento){
+
+ 
+
+}else{
+
+}
+       
+
+      });
+     
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+  });
+</script>
+
+
+
+
+
+</body>
+</html>

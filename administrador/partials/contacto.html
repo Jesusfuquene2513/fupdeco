@@ -1,0 +1,171 @@
+<div class="row">
+    <div class="col-xl-12 m-auto">
+        <div class="card">
+            <div class="card-header ">
+                <h4 class="text-light">Formulario de contacto</h4>
+            </div>
+            <div class="card-body">
+                <form action="aplicacion/controllers/routes/routes.php" method="post">
+                    <div class="form-group col-xl-12 p-1" style="float:left">
+                        <label for="">Nombre completo</label>
+                        <input type="text" class="form-control" id="nombre_contacto" name="nombre_contacto">
+                        <input type="text" name="peticion" value="28" class="d-none">
+                    </div>
+                    <div class="form-group col-xl-6 p-1" style="float:left">
+                        <label for="">Tipo Identificación</label>
+                        <select name="tipo_documento" id="sel-documento" class="form-control" style="cursor:pointer">
+                            <option value="0">Seleccione tipo de identificación</option>
+                            <option value="1">Cedula de ciudadania</option>
+                            <option value="2">Cedula extranjera</option>
+                            <option value="3">Pasaporte</option>
+                            <option value="4">NIT</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-xl-6 p-1" style="float:left">
+                        <label for="">Numéro de identificación</label>
+                        <input type="text" name="numero_identificacion" class="form-control" disabled id="documento">
+                    </div>
+                    <div class="form-group col-xl-6 p-1" style="float:left">
+                        <label for="">Teléfono</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono">
+                    </div>
+                    <div class="form-group col-xl-6 p-1" style="float:left">
+                        <label for="">Correo electronico</label>
+                        <input type="text" class="form-control" id="correo" name="correo">
+                    </div>
+                    <div class="form-group col-xl-6 p-1" style="float:left;">
+                        <label for="">Seleccione Departamento</label>
+                        <select class="form-control" id="sel-departamento" style="cursor:pointer" name="departamento">
+
+                        </select>
+
+                    </div>
+                    <div class="form-group col-xl-6 p-1" style="float:left;">
+                        <label for="">Seleccione Municipio</label>
+                        <select name="municipio" class="form-control" id="sel-municipio" style="cursor:pointer">
+
+                        </select>
+
+                    </div>
+                    <div class="form-group ">
+                         <label for="">Observaciones</label>
+                        <textarea name="consulta" id="consulta" rows="3" class="form-control"
+                            style="resize:none"></textarea>
+
+                    </div>
+                    <div class="form-group col-xl-12">
+                        <center>
+                            <input type="button" class="btn btn-primary" value="Enviar" id="enviar-peticion-contacto">
+                        </center>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        var status_municipio = 0;
+        $("#enviar-peticion-contacto").click(function () {
+
+            if ($("#nombre_contacto").val().length > 0 && $("#consulta").val().length > 0 && $("#documento").val().length > 0 && $("#telefono").val().length > 0 && $("#correo").val().length > 0 && status_municipio == 1) {
+
+               $(this).attr("type", "submit");
+                $(this).click();
+
+            } else {
+                alert("Por favor Diligencie correctamente los datos solicitados");
+            }
+
+        });
+
+        $("#sel-documento").change(function () {
+            var valor_documento_tipo = $(this).val();
+            if (valor_documento_tipo == 0) {
+                $("#documento").val("");
+                $("#documento").attr("disabled", "disabled");
+
+            } else {
+                $("#documento").removeAttr("disabled");
+            }
+        });
+
+        $("#sel-departamento").change(function () {
+            var valor_departamento = $(this).val();
+            if (valor_departamento == 0) {
+                document.ready = document.getElementById("sel-municipio").value = '0';
+                $("#sel-municipio").attr("disabled", "disabled");
+                status_municipio = 0;
+
+            } else {
+
+                $("#sel-municipio").removeAttr("disabled");
+                cargar_municipios(valor_departamento);
+
+
+            }
+
+        });
+
+        $("#sel-municipio").change(function () {
+            var valor_municipio = $(this).val();
+            if (valor_municipio == 0) {
+                status_municipio = 0;
+
+            } else {
+                status_municipio = 1;
+            }
+        });
+
+        function cargar_municipios(valor_departamento) {
+
+
+
+            $.ajax({
+                type: 'POST',  // Envío con método POST
+                url: 'aplicacion/controllers/routes/routes.php',  // Fichero destino (el PHP que trata los datos)
+                data: { peticion: 27, departamento: valor_departamento } // Datos que se envían
+            }).done(function (msg) {  // Función que se ejecuta si todo ha ido bien
+
+                $("#sel-municipio").html(msg);  // Escribimos en el div consola el mensaje devuelto
+
+
+
+
+
+
+            }).fail(function (jqXHR, textStatus, errorThrown) { // Función que se ejecuta si algo ha ido mal
+                // Mostramos en consola el mensaje con el error que se ha producido
+                $("#sel-municipio").html("The following error occured: " + textStatus + " " + errorThrown);
+
+
+            });
+
+
+
+        };
+
+        $("#sel-municipio").attr("disabled", "disabled");
+        $.ajax({
+            type: 'POST',  // Envío con método POST
+            url: 'aplicacion/controllers/routes/routes.php',  // Fichero destino (el PHP que trata los datos)
+            data: { peticion: 26 } // Datos que se envían
+        }).done(function (msg) {  // Función que se ejecuta si todo ha ido bien
+
+            $("#sel-departamento").html(msg);  // Escribimos en el div consola el mensaje devuelto
+
+
+
+
+
+
+        }).fail(function (jqXHR, textStatus, errorThrown) { // Función que se ejecuta si algo ha ido mal
+            // Mostramos en consola el mensaje con el error que se ha producido
+            $("#sel-departamento").html("The following error occured: " + textStatus + " " + errorThrown);
+
+
+        });
+
+    });
+</script>

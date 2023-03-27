@@ -1,0 +1,106 @@
+@media only screen and (max-width: 600px) {
+	.slide img{
+	height: 300px;
+
+}
+.slide{
+	position: relative;
+}
+
+.carousel-caption{
+
+	text-shadow: 2px 2px 3px black;
+	position:absolute; top:50%;
+	left:25%;
+
+}
+
+.carousel h1{
+	font-size: 35px;
+}
+}
+@media only screen and (min-width: 600px) {
+	.slide img{
+	height: 400px;
+
+}
+.slide{
+	position: relative;
+}
+
+.carousel-caption{
+
+	text-shadow: 2px 2px 3px black;
+	position:absolute; top:50%;
+	left:50%;
+
+}
+
+.carousel h1{
+	font-size: 40px;
+}
+}
+@media only screen and (min-width: 768px) {
+	.slide img{
+	height: 500px;
+
+}
+.slide{
+	position: relative;
+}
+
+.carousel-caption{
+
+	text-shadow: 2px 2px 3px black;
+	position:absolute; top:50%;
+	left:50%;
+	display:block;
+
+}
+
+.carousel h1{
+	font-size: 50px;
+}
+}
+@media only screen and (min-width: 992px) {
+	.slide img{
+	height: 550px;
+
+}
+.slide{
+	position: relative;
+}
+
+.carousel-caption{
+
+	text-shadow: 2px 2px 3px black;
+	position:absolute; top:50%;
+	left:50%;
+
+}
+
+.carousel h1{
+	font-size: 50px;
+}
+}
+@media only screen and (min-width: 1200px) {
+	.slide img{
+	height: 750px;
+
+}
+.slide{
+	position: relative;
+}
+
+.carousel-caption{
+
+	text-shadow: 2px 2px 3px black;
+	position:absolute; top:50%;
+	left:50%;
+
+}
+
+.carousel h1{
+	font-size: 60px;
+}
+}

@@ -1,0 +1,75 @@
+@media only screen and (max-width: 600px) {
+    .item-carga-imagen , .archivo-multimedia , .video-multimedia{
+        height: 330px;
+    }
+    .img-tabla{
+        width: 100%;
+        height: 50px;
+    }
+
+    .capa{
+        width: 95%;
+        height: 330px; 
+    }
+    
+}
+@media only screen and (min-width: 600px) {
+    .item-carga-imagen , .archivo-multimedia , .video-multimedia{
+        height: 130px;
+    }
+    .img-tabla{
+        width: 100%;
+        height: 80px;
+    }
+    .capa{
+        width: 90%;
+        height: 130px; 
+    }
+}
+@media only screen and (min-width: 768px) {
+    .item-carga-imagen , .archivo-multimedia , .video-multimedia{
+        height: 130px;
+    }
+    .img-tabla{
+        width: 80%;
+        height: 100px;
+    }
+    .capa{
+        width: 90%;
+        height: 130px; 
+    }
+}
+@media only screen and (min-width: 992px) {
+    .item-carga-imagen , .archivo-multimedia , .video-multimedia{
+        height: 130px;
+    }
+    .img-tabla{
+        width: 80%;
+        height: 150px;
+    }
+
+    .capa{
+        width: 90%;
+        height: 130px; 
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .item-carga-imagen , .archivo-multimedia , .video-multimedia{
+        height: 130px;
+    }
+    #contenedor-carga{
+        height: 400px;
+        overflow-y: scroll;
+    }
+    .img-tabla{
+        width: 80%;
+        height: 150px;
+    }
+    .capa{
+        width: 90%;
+        height: 130px; 
+    }
+    .video-tabla{
+        width: 80%;
+    }
+}

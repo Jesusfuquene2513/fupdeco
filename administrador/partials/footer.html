@@ -1,0 +1,122 @@
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 m-auto">
+<div class="contador-relativvo" style="width: 100%; position:relative; z-index: 2">
+                <center><h1 style="color:white; text-decoration: none; display:none">1995</h1></center>
+
+            <div class="contador" style="text-align: center; display:flex; height: 100px; align-items: center; margin:auto; "></div>
+            <center><span class="parrafo" style="color:white; font-weight: bolder">VISITANTES</span></center>
+            </div>
+<center><h4 class="text-left" style="color:white; position:relative; top:30px">UBICANOS</h4></center>
+    <iframe class="mapa p-3 mt-5"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.6629861298366!2d-76.54202628469145!3d3.431950052304696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e30a69afc88069d%3A0x2563904bce5f502c!2sCra.%2029%20%235b61%2C%203%20de%20Julio%2C%20Cali%2C%20Valle%20del%20Cauca!5e0!3m2!1ses!2sco!4v1669042851590!5m2!1ses!2sco"
+        style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+</div>
+
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 p-4">
+
+    <div class="row container-fluid m-auto">
+
+        <div class="col-xl-2 col-lg-4 col-sm-4 mt-3 mb-3" style="color:white">
+
+            <h4 class="text-left" style="color:white">MAPA DEL SITIO</h4>
+            <ul class="p-0 ul-footer">
+                <li style="list-style: none; text-decoration: underline; font-weight: bolder; font-style:oblique;">
+                    <a href="home.php" style="color:white">Inicio</a></li>
+                <li style="list-style: none; text-decoration: underline; font-weight: bolder; font-style:oblique;">
+                   <a href="#about" style="color:white"> Nosotros</a></li>
+                <li style="list-style: none; text-decoration: underline; font-weight: bolder; font-style:oblique;">
+                    <a href="#services" style="color:white">Programas</a></li>
+                <li style="list-style: none; text-decoration: underline; font-weight: bolder; font-style:oblique;">
+                  <a href="contactanos.php" style="color:white">  Contáctanos</a></li>
+            </ul>
+
+        </div>
+        <div class="col-xl-2 col-lg-4 col-sm-4 mb-3 mt-3" style="color:white">
+
+            <h4 class="text-left" style="color:white">AYUDA</h4>
+            <ul class="p-0 ul-footer">
+                <li style="list-style: none; text-decoration:underline; font-weight: bolder; font-style: oblique;">
+                    Preguntas frecuentes</li>
+                <li style="list-style: none; text-decoration:underline; font-weight: bolder; font-style: oblique;">
+                   privacidad en el manejo de la información</li>
+
+            </ul>
+
+        </div>
+        <div class="col-xl-3 col-lg-4 col-sm-4 mb-3 mt-3" style="color:white">
+
+            <h4 class="text-center" style="color:white">REDES SOCIALES</h4>
+            <div class="row">
+                <div class="container contenedor-red-footer">
+                    <button class="red"><i class="fa fa-facebook-official"></i></button>
+                    <button class="red"><i class="fa fa-linkedin"></i></button>
+                    <button class="red"><i class="fa fa-youtube"></i></button>
+                    <button class="red"><i class="fa fa-twitter"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-5 col-lg-12 col-md-12 d-table mt-3" style="color:white">
+            <h4 class="text-center" style="color:white">CONTACTANOS</h4>
+            <div class="row">
+
+                <form action="aplicacion/controllers/routes/routes.php" method="post" class="p-0">
+                    <div class="form-group col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 p-1 mt-1 mb-1 formulario-campos">
+                        <label for="">Nombre completo</label>
+                        <input type="text" class="form-control" id="nombre_contacto" name="nombre_contacto">
+                        <input type="text" name="peticion" value="35" class="d-none">
+                    </div>
+                    <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 p-1 mt-1 mb-1 formulario-campos" style="float:left">
+                        <label for="">Tipo Identificación</label>
+                        <select name="tipo_documento" id="sel-documento" class="form-control" style="cursor:pointer">
+                            <option value="0">Seleccione tipo de identificación</option>
+                            <option value="1">Cedula de ciudadania</option>
+                            <option value="2">Cedula extranjera</option>
+                            <option value="3">Pasaporte</option>
+                            <option value="4">NIT</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 p-1 mt-1 mb-1 formulario-campos" style="float:left">
+                        <label for="">Numéro de identificación</label>
+                        <input type="text" name="numero_identificacion" class="form-control" disabled id="documento">
+                    </div>
+                    <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 p-1 mt-1 mb-1 formulario-campos" style="float:left">
+                        <label for="">Teléfono</label>
+                        <input type="text" class="form-control" id="telefono" name="telefono">
+                    </div>
+                    <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 p-1 mt-1 mb-1 formulario-campos" style="float:left">
+                        <label for="">Correo electronico</label>
+                        <input type="text" class="form-control" id="correo" name="correo">
+                    </div>
+                    <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 p-1 mt-1 mb-1 formulario-campos" style="float:left">
+                        <label for="">Seleccione Departamento</label>
+                        <select class="form-control" id="sel-departamento" style="cursor:pointer" name="departamento">
+
+                        </select>
+                    </div>
+                    <div class="form-group col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 p-1 mt-1 mb-1 formulario-campos" style="float:left">
+                        <label for="">Seleccione Municipio</label>
+                        <select name="municipio" class="form-control" id="sel-municipio" style="cursor:pointer">
+
+                        </select>
+                    </div>
+                    <div class="form-group col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 p-1 mt-1 mb-1 formulario-campos" style="float:left">
+                        <textarea name="consulta" id="consulta" rows="3" class="form-control"
+                        style="resize:none; height:150px"></textarea>
+                    </div>
+                    <div class="form-group col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 p-1 mt-1 mb-1 formulario-campos" style="float:left">
+                        <center>
+                            <input type="button" class="btn btn-primary" value="Enviar" id="enviar-peticion-contacto">
+                        </center>
+                    </div>
+                </form>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+</div>
+

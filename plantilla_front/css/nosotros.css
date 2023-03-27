@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap');
+.principal{
+		
+		margin-top:20px; margin-bottom: 20px;
+
+		
+		
+	}
+	h2 ,  h4{
+		color:#242c5c;
+	}
+
+	h2{
+		text-decoration:underline;
+		text-shadow: 1px 1px 1px #242c5c;
+	}
+
+	h2 , h4 , .en , .na{
+		font-family: 'PT Serif', serif;
+	}
+
+	.card{
+		background: rgb(255 , 255 , 255 , 0.9);
+		border-radius: 20px;
+	}
+
+
+	@media only screen and (max-width: 600px) {
+
+.principal{
+	width:95%;
+	margin:auto;
+}
+.card{
+	
+	
+}
+.tarjetas{
+	width:100%;
+	
+}
+
+.info{
+	width:100%;
+
+	float:left;
+	padding: 10px;
+	display:table;
+	box-sizing: border-box;
+
+}
+
+.info2{
+	width:100%;
+}
+.info2 span{
+	
+	margin-top: 10px; margin-bottom: 10px;
+	text-decoration: underline
+}
+.en{
+	font-size:25px;
+}
+.na{
+	font-size:20px;
+}
+
+}
+
+	@media only screen and (min-width: 600px) {
+
+.principal{
+	width:90%;
+	margin:auto;
+}
+.card{
+	
+	
+}
+.tarjetas{
+	width:100%;
+	
+}
+
+.info{
+	width:50%;
+
+	float:left;
+	padding: 5px;
+	display:table;
+	box-sizing: border-box;
+
+}
+
+.info2{
+	width:100%;
+}
+.info2 span{
+	
+	margin-top: 10px; margin-bottom: 10px;
+	text-decoration: underline
+}
+.en{
+	font-size:20px;
+}
+.na{
+	font-size:15px;
+}
+
+}
+
+	@media only screen and (min-width: 768px) {
+
+.principal{
+	width:95%;
+	margin:auto;
+}
+.card{
+	
+	
+}
+.tarjetas{
+	width:100%;
+	
+}
+
+.info{
+	width:33.333333%;
+
+	float:left;
+	padding: 5px;
+	display:table;
+	box-sizing: border-box;
+}
+
+.info2{
+	width:100%;
+}
+.info2 span{
+	
+	margin-top: 10px; margin-bottom: 10px;
+	text-decoration: underline
+}
+.en{
+	font-size:20px;
+}
+.na{
+	font-size:15px;
+}
+
+}
+
+@media only screen and (min-width: 992px) {
+
+.principal{
+	width:90%;
+	margin:auto;
+}
+.card{
+	
+	
+}
+.tarjetas{
+	width:100%;
+	
+}
+
+.info{
+	width:33.333333%;
+
+	float:left;
+	padding: 5px;
+	display:table;
+	box-sizing: border-box;
+}
+
+.info2{
+	width:100%;
+}
+.info2 span{
+	
+	margin-top: 10px; margin-bottom: 10px;
+	text-decoration: underline
+}
+.en{
+	font-size:25px;
+}
+.na{
+	font-size:20px;
+}
+
+}	
+@media only screen and (min-width: 1200px) {
+
+.principal{
+	width:65%;
+	margin:auto;
+}
+.card{
+	
+	
+}
+.tarjetas{
+	width:100%;
+	
+}
+
+.info{
+	width:33.333333%;
+
+	float:left;
+	padding: 5px;
+	display:table;
+	box-sizing: border-box;
+}
+
+.info2{
+	width:100%;
+}
+.info2 span{
+	
+	margin-top: 10px; margin-bottom: 10px;
+	text-decoration: underline
+}
+.en{
+	font-size:25px;
+}
+.na{
+	font-size:20px;
+}
+
+}

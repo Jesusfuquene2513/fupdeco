@@ -1,0 +1,59 @@
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-11 col-12  m-auto">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="text-center text-light" style="position:relative; top:4px">Ver elementos multimedia</h4>
+            </div>
+            <div class="card-body">
+
+                <div class="row" id="listado-archivos-multimedia">
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    $(document).ready(function () {
+
+        $.ajax({
+            type: 'POST',  // Envío con método POST
+            url: 'aplicacion/controllers/routes/routes.php',  // Fichero destino (el PHP que trata los datos)
+            data: { peticion: 3 } // Datos que se envían
+        }).done(function (msg) {  // Función que se ejecuta si todo ha ido bien
+
+            $("#listado-archivos-multimedia").html(msg);  // Escribimos en el div consola el mensaje devuelto
+            $(".imagen-archivo").each(function () {
+
+                var tipo_elemento = $(this).attr("id");
+                if (tipo_elemento == 1) {
+                    var ruta = $(this).attr("src");
+                    var ruta_nueva = ruta.slice(28)
+                    var new_string = "aplicacion/biblioteca/multimedia/" + ruta_nueva;
+                    $(this).attr("src", new_string);
+                }
+
+                if (tipo_elemento == 3) {
+                    var ruta = $(this).attr("src");
+                    var iframe = '<iframe  src="'+ruta+'" style="width:100%" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video-multimedia"></iframe>';
+                   $(this).replaceWith(iframe);
+                }
+
+
+            });
+
+
+
+        }).fail(function (jqXHR, textStatus, errorThrown) { // Función que se ejecuta si algo ha ido mal
+            // Mostramos en consola el mensaje con el error que se ha producido
+            $("#listado-archivos-multimedia").html("The following error occured: " + textStatus + " " + errorThrown);
+
+
+        });
+
+
+    });
+</script>

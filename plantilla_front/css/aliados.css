@@ -1,0 +1,42 @@
+#aliados-dinamicos{
+	padding-top: 50px; padding-bottom: 50px;
+}
+.slick-slide {
+  margin: 0px 10px;
+} 
+@media only screen and (max-width: 600px) {
+
+.slick-slide img {
+  width: 95%;
+  height:70px;
+}
+}
+@media only screen and (min-width: 600px) {
+
+.slick-slide img {
+  width: 95%;
+  height:70px;
+}
+}
+@media only screen and (min-width: 768px) {
+
+.slick-slide img {
+  width: 90%;
+  height:70px;
+}
+}
+@media only screen and (min-width: 992px) {
+
+.slick-slide img {
+  width: 85%;
+  height:85px;
+}
+}
+
+@media only screen and (min-width: 1200px) {
+
+.slick-slide img {
+  width: 85%;
+  height:80px;
+}
+}

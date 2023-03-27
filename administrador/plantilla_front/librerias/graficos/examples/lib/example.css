@@ -1,0 +1,14 @@
+
+#graph , #graph2 , #graph3 {
+  width:100%;
+  height: 250px;
+  margin: auto;
+  
+  display:table;
+  align-items: center;
+  
+}
+pre {
+  height: 250px;
+  overflow: auto;
+}

@@ -1,0 +1,12 @@
+[03-Mar-2023 16:43:41 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "i" in /home2/redepz1r/public_html/redepyme_admin/aplicacion/models/programa/programa_model.php:20
+Stack trace:
+#0 /home2/redepz1r/public_html/redepyme_admin/aplicacion/controllers/programas/programa_controller.php(8): Programa_model->crear_programa('Asesor\xC3\xADa conta...', 'Lorem Ipsum is ...', 'https://onaliat...', '35000', '<a href="https:...')
+#1 /home2/redepz1r/public_html/redepyme_admin/aplicacion/controllers/routes/routes.php(290): Programa_controller->crear_programa('Asesor\xC3\xADa conta...', 'Lorem Ipsum is ...', 'https://onaliat...', '35000', '<a href="https:...')
+#2 {main}
+  thrown in /home2/redepz1r/public_html/redepyme_admin/aplicacion/models/programa/programa_model.php on line 20
+[03-Mar-2023 16:44:06 UTC] PHP Fatal error:  Uncaught Error: Undefined constant "i" in /home2/redepz1r/public_html/redepyme_admin/aplicacion/models/programa/programa_model.php:20
+Stack trace:
+#0 /home2/redepz1r/public_html/redepyme_admin/aplicacion/controllers/programas/programa_controller.php(8): Programa_model->crear_programa('Asesor\xC3\xADa conta...', 'Lorem Ipsum is ...', 'https://onaliat...', '35000', '<a href="https:...')
+#1 /home2/redepz1r/public_html/redepyme_admin/aplicacion/controllers/routes/routes.php(290): Programa_controller->crear_programa('Asesor\xC3\xADa conta...', 'Lorem Ipsum is ...', 'https://onaliat...', '35000', '<a href="https:...')
+#2 {main}
+  thrown in /home2/redepz1r/public_html/redepyme_admin/aplicacion/models/programa/programa_model.php on line 20

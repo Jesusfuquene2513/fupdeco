@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&display=swap');
+
+label , input , span , h1 , h2 , h3 , h4 , h5 , h6 , button , .btn , a{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+}

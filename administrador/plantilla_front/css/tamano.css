@@ -1,0 +1,572 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300&display=swap');
+body{
+
+	overflow-x: hidden;
+
+}
+
+.info{
+	margin-top: 1px; margin-bottom: 1px;
+}
+.img-info{
+	-webkit-box-shadow: 1px 0px 3px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 0px 3px 0px rgba(0,0,0,0.75);
+box-shadow: 1px 0px 3px 0px rgba(0,0,0,0.75);
+}
+
+.separador{
+	display:table;
+
+}
+.nombre{
+	margin-top:3px;
+}
+
+.ul-footer li{
+	margin-top: 5px; margin-bottom: 5px;
+	cursor:pointer;
+
+}
+
+
+.red{
+	width: 40px; height: 40px;
+	border-radius: 50%;
+	background: #c3141c;
+	color:white; font-weight: bolder;
+	border:solid 1px white;
+	margin: auto;
+	background: rgba(235,196,4,1);
+background: -moz-linear-gradient(left, rgba(235,196,4,1) 0%, rgba(36,44,92,1) 43%, rgba(195,20,28,1) 76%, rgba(195,20,28,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(235,196,4,1)), color-stop(43%, rgba(36,44,92,1)), color-stop(76%, rgba(195,20,28,1)), color-stop(100%, rgba(195,20,28,1)));
+background: -webkit-linear-gradient(left, rgba(235,196,4,1) 0%, rgba(36,44,92,1) 43%, rgba(195,20,28,1) 76%, rgba(195,20,28,1) 100%);
+background: -o-linear-gradient(left, rgba(235,196,4,1) 0%, rgba(36,44,92,1) 43%, rgba(195,20,28,1) 76%, rgba(195,20,28,1) 100%);
+background: -ms-linear-gradient(left, rgba(235,196,4,1) 0%, rgba(36,44,92,1) 43%, rgba(195,20,28,1) 76%, rgba(195,20,28,1) 100%);
+background: linear-gradient(to right, rgba(235,196,4,1) 0%, rgba(36,44,92,1) 43%, rgba(195,20,28,1) 76%, rgba(195,20,28,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebc404', endColorstr='#c3141c', GradientType=1 );
+
+}
+.cinta{
+	display:flex;
+	align-items: center;
+	padding-top: 5px; padding-bottom: 5px;
+}
+.red2{
+	width: 30px; height: 30px;
+	border-radius: 50%;
+	background: #c3141c;
+	color:white; font-weight: bolder;
+	border:solid 1px white;
+	margin-left: 10px; margin-right: 10px;
+	background: rgba(235,196,4,1);
+background: -moz-linear-gradient(left, rgba(235,196,4,1) 0%, rgba(36,44,92,1) 43%, rgba(195,20,28,1) 76%, rgba(195,20,28,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(235,196,4,1)), color-stop(43%, rgba(36,44,92,1)), color-stop(76%, rgba(195,20,28,1)), color-stop(100%, rgba(195,20,28,1)));
+background: -webkit-linear-gradient(left, rgba(235,196,4,1) 0%, rgba(36,44,92,1) 43%, rgba(195,20,28,1) 76%, rgba(195,20,28,1) 100%);
+background: -o-linear-gradient(left, rgba(235,196,4,1) 0%, rgba(36,44,92,1) 43%, rgba(195,20,28,1) 76%, rgba(195,20,28,1) 100%);
+background: -ms-linear-gradient(left, rgba(235,196,4,1) 0%, rgba(36,44,92,1) 43%, rgba(195,20,28,1) 76%, rgba(195,20,28,1) 100%);
+background: linear-gradient(to right, rgba(235,196,4,1) 0%, rgba(36,44,92,1) 43%, rgba(195,20,28,1) 76%, rgba(195,20,28,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ebc404', endColorstr='#c3141c', GradientType=1 );
+display: inline;
+
+}
+.red:hover{
+	background: #c3141c;
+}
+.red i{
+	font-size:30px;
+
+}
+
+.contenedor-red-footer{
+	display:flex;
+}
+
+.banner-donacion{
+
+}
+
+@media only screen and (max-width: 600px) {
+    
+    .red2{
+	width: 35px; height: 35px;
+
+
+}
+	.img-logo{
+	width: 220px;
+}
+.cinta{
+	width: 100%;
+	
+	background: #2ea3f2;
+}
+.nav-link{
+	font-size: 20px;
+}
+
+.d-block{
+	height: 300px
+}
+.separador{
+	margin-bottom: 50px; margin-top: 50px;
+}
+.img-team{
+height:370px
+}
+.nombre{
+	font-size: 18px;
+	font-weight: bolder
+}
+.mapa{
+	width: 100%;
+	height: 450px;
+	
+}
+.banner-donacion2{
+	height: 400px; 
+	
+position:relative;
+
+
+
+}
+.banner-donacion2 img{
+	width: 100%;
+	height: 100%;
+	position:relative;
+}
+
+.btn-donativos{
+	font-size: 20px; color:white;
+	background:#c3141c;
+	width: 55%;
+	left:23%;
+	border-radius: 20px;
+	border:none;
+	padding-top: 5px; padding-bottom: 5px;
+	font-family: 'Advent Pro', sans-serif;
+}
+
+.img-rompecabezas{
+	width: 98%;
+	height: 150px;
+	border:none;
+}
+.conteo{
+	width: 50px; height: 50px;
+	display: flex;
+	align-items: center;
+	position:relative;
+
+}
+.num{
+	background-color:#2ea3f2; 
+	width: 50px;
+	height: 50px;
+	display:flex;
+	align-items: center;
+	text-align: center;
+	border-radius: 50%;
+	margin-left: 4px; margin-right: 4px
+}
+
+.contador{
+	width: 50%;
+}
+.contador-relativvo{
+	top:-150px;
+}
+}
+
+@media only screen and (min-width: 600px) {
+	.img-logo{
+	width: 220px;
+}
+.cinta{
+	width: 100%;
+	
+	background: #2ea3f2;
+}
+.nav-link{
+	font-size: 20px;
+}
+
+.d-block{
+	height: 400px
+}
+.separador{
+	margin-bottom: 50px; margin-top: 50px;
+}
+.img-team{
+height:340px
+}
+.nombre{
+	font-size: 15px;
+	font-weight: bolder
+}
+.mapa{
+	width: 100%;
+	height: 450px;
+}
+
+.banner-donacion2{
+	height: 400px; 
+	
+position:relative;
+
+
+
+}
+.banner-donacion2 img{
+	width: 100%;
+	height: 100%;
+	position:relative;
+}
+
+.btn-donativos{
+	font-size: 20px; color:white;
+	background:#c3141c;
+	width: 55%;
+	left:23%;
+	border-radius: 20px;
+	border:none;
+	padding-top: 5px; padding-bottom: 5px;
+	font-family: 'Advent Pro', sans-serif;
+}
+
+.img-rompecabezas{
+	width: 98%;
+	height: 200px;
+	border:none;
+}
+.conteo{
+	width: 50px; height: 50px;
+	display: flex;
+	align-items: center;
+	position:relative;
+
+}
+.num{
+	background-color:#2ea3f2; 
+	width: 50px;
+	height: 50px;
+	display:flex;
+	align-items: center;
+	text-align: center;
+	border-radius: 50%;
+	margin-left: 4px; margin-right: 4px
+}
+
+.contador{
+	width: 27%;
+}
+.contador-relativvo{
+	top:-150px;
+}
+}
+
+@media only screen and (min-width: 768px) {
+	.img-logo{
+	width: 220px;
+}
+.cinta{
+	width: 100%;
+	
+	background: #2ea3f2;
+}
+.nav-link{
+	font-size: 20px;
+}
+
+.d-block{
+	height: 500px
+}
+.separador{
+	margin-bottom: 50px; margin-top: 50px;
+}
+.img-team{
+height:380px
+}
+.nombre{
+	font-size: 18px;
+	font-weight: bolder
+}
+.mapa{
+	width: 100%;
+	height: 450px;
+}
+.banner-donacion2{
+	height: 400px; 
+	
+position:relative;
+
+
+
+}
+.banner-donacion2 img{
+	width: 100%;
+	height: 100%;
+	position:relative;
+}
+
+.btn-donativos{
+	font-size: 25px; color:white;
+	background:#c3141c;
+	width: 50%;
+	left:25%;
+	border-radius: 20px;
+	border:none;
+	padding-top: 5px; padding-bottom: 5px;
+	font-family: 'Advent Pro', sans-serif;
+}
+
+.img-rompecabezas{
+	width: 98%;
+	height: 200px;
+	border:none;
+}
+.conteo{
+	width: 50px; height: 50px;
+	display: flex;
+	align-items: center;
+	position:relative;
+
+}
+.num{
+	background-color:#2ea3f2; 
+	width: 50px;
+	height: 50px;
+	display:flex;
+	align-items: center;
+	text-align: center;
+	border-radius: 50%;
+	margin-left: 4px; margin-right: 4px
+}
+
+.conteo{
+	width: 50px; height: 50px;
+	display: flex;
+	align-items: center;
+	position:relative;
+
+}
+.num{
+	background-color:#2ea3f2; 
+	width: 50px;
+	height: 50px;
+	display:flex;
+	align-items: center;
+	text-align: center;
+	border-radius: 50%;
+	margin-left: 4px; margin-right: 4px
+}
+
+.contador{
+	width: 25%;
+}
+.contador-relativvo{
+	top:-150px;
+}
+}
+
+@media only screen and (min-width: 992px) {
+	.img-logo{
+	width: 220px;
+}
+.cinta{
+	width: 100%;
+	
+	background: #2ea3f2;
+}
+.nav-link{
+	font-size: 20px;
+}
+
+.d-block{
+	height: 600px
+}
+.separador{
+	margin-bottom: 50px; margin-top: 50px;
+}
+.img-team{
+height:320px
+}
+.nombre{
+	font-size: 18px;
+	font-weight: bolder
+}
+.mapa{
+	width: 100%;
+	height: 450px;
+}
+
+.banner-donacion2{
+	height: 500px; 
+	
+position:relative;
+
+
+
+}
+.banner-donacion2 img{
+	width: 100%;
+	height: 100%;
+	position:relative;
+}
+
+.btn-donativos{
+	font-size: 25px; color:white;
+	background:#c3141c;
+	width: 33%;
+	left:33%;
+	border-radius: 20px;
+	border:none;
+	padding-top: 5px; padding-bottom: 5px;
+	font-family: 'Advent Pro', sans-serif;
+}
+
+.img-rompecabezas{
+	width: 98%;
+	height: 200px;
+	border:none;
+}
+
+.conteo{
+	width: 50px; height: 50px;
+	display: flex;
+	align-items: center;
+	position:relative;
+
+}
+.num{
+	background-color:#2ea3f2; 
+	width: 50px;
+	height: 50px;
+	display:flex;
+	align-items: center;
+	text-align: center;
+	border-radius: 50%;
+	margin-left: 4px; margin-right: 4px
+}
+
+.contador{
+	width: 25%;
+}
+.contador-relativvo{
+	top:-170px;
+}
+}
+@media only screen and (min-width: 1200px) {
+	.img-logo{
+	width: 220px;
+}
+.cinta{
+	width: 100%;
+	
+	background: #2ea3f2;
+}
+.nav-link{
+	font-size: 20px;
+}
+
+.d-block{
+	height: 760px
+}
+.img-team{
+height: 380px
+}
+.separador{
+	margin-bottom: 50px; margin-top: 50px;
+}
+.nombre{
+	font-size: 18px;
+	font-weight: bolder
+}
+.mapa{
+	width: 100%;
+	height: 450px;
+}
+.banner-donacion2{
+	height: 700px; 
+	
+position:relative;
+
+
+
+}
+.banner-donacion2 img{
+	width: 100%;
+	height: 100%;
+	position:relative;
+}
+
+.btn-donativos{
+	font-size: 25px; color:white;
+	background:#c3141c;
+	width: 33%;
+	left:33%;
+	border-radius: 20px;
+	border:none;
+	padding-top: 5px; padding-bottom: 5px;
+	font-family: 'Advent Pro', sans-serif;
+}
+
+
+
+.img-rompecabezas{
+	width: 98%;
+	height: 200px;
+	border:none;
+}
+.banner-cer{
+	height: 650px;
+	
+	background-image: url("https://img.freepik.com/fotos-premium/bandera-colombia-sobre-fondo-pincel-trazo-blanco-grunge-angustiado_150101-6083.jpg?w=2000");");
+	background-size:100%;
+	
+}
+.banner-cer img{
+	height: 100%; width: 100%;
+}
+
+.img-programa1{
+	height: 500px
+}
+
+.contador{
+	width: 15%;
+}
+.conteo{
+	width: 50px; height: 50px;
+	display: flex;
+	align-items: center;
+	position:relative;
+
+}
+.num{
+	background-color:#2ea3f2; 
+	width: 50px;
+	height: 50px;
+	display:flex;
+	align-items: center;
+	text-align: center;
+	border-radius: 50%;
+	margin-left: 4px; margin-right: 4px
+}
+
+
+.contador-relativvo{
+	top:-250px;
+}
+
+
+
+}
+.fa-plus{
+	color:white;
+}
+
+.accordion-button , .titulo-proyecto{
+	font-family: 'Advent Pro', sans-serif;
+}

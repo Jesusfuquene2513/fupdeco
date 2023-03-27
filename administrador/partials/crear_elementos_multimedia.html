@@ -1,0 +1,139 @@
+<div class="row">
+    <div class="col-xl-12 col-lg-12 col-md-11 col-sm-12 m-auto">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="text-center text-light" style="position:relative; top:4px">Creación de Elementos Multimedia</h4>
+            </div>
+            <div class="card-body">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-3 mb-3">
+                    <label for="">Tipo de elemento a subir</label>
+                    <select name="" id="tipo_formulario_multimedia_carga" class="form-control">
+                        <option value="0" selected>Seleccione tipo de elemento a subir</option>
+                        <option value="1">Imagen interna</option>
+                        <option value="2">Imagen externa</option>
+                        <option value="3">Video Externo (Youtube)</option>
+                    </select>
+
+                </div>
+               <div class="card d-none" id="formulario-imagen-interna">
+                <div class="card-header">
+                    <center><h6>Subir imagen interna</h6></center>
+                </div>
+                <div class="card-body">
+                    <form action="aplicacion/controllers/routes/routes.php" method="post" enctype="multipart/form-data">
+                        <div class="form-group col-xl-6 col-md-6 col-sm-12 col-12 p-1 mt-2 mb-2" style="float:left;">
+                            <label for="">Nombre del elemento</label>
+                            <input type="text" class="form-control" placeholder="Nombre del elemento" name="nombre_elemento" required>
+                            <input type="hidden" name="peticion" value="2">
+                        </div>
+                        <div class="form-group col-xl-6 col-md-6 col-sm-12 col-12 p-1 mt-2 mb-2" style="float:left;">
+                            <label for="">Subir archivo al servidor</label>
+                            <input type="file" class="form-control" name="archivo">
+                            <input type="hidden" name="tipo_elemento" value="1">
+                        </div>
+                       
+                        <div class="form-group">
+                            <center> <input type="submit" name="subir" class="btn btn-success text-center" value="Subir archivo"></center>
+                        </div>
+                    </form>
+                </div>
+               </div>
+               <div class="card d-none" id="formulario-imagen-externa">
+                <div class="card-header">
+                    <center><h6>Subir imagen externa</h6></center>
+                </div>
+                <div class="card-body">
+                    <form action="aplicacion/controllers/routes/routes.php" method="post">
+                   
+                        <div class="form-group col-xl-6 col-md-6 col-sm-12 col-12 p-1 mt-2 mb-2" style="float:left;">
+                            <label for="">Nombre del elemento</label>
+                            <input type="text" class="form-control" placeholder="Nombre del elemento" required name="nombre_elemento">
+                            <input type="hidden" name="peticion" value="4">
+                        </div>
+                        <div class="form-group col-xl-6 col-md-6 col-sm-12 col-12 p-1 mt-2 mb-2" style="float:left;">
+                            <label for="">Url externa a subir</label>
+                            <input type="text" class="form-control" required name="ruta_externa">
+                        </div>
+                       
+                        <div class="form-group">
+                            <center> <button type="submit" class="btn btn-success text-center">Subir archivo</button></center>
+                        </div>
+    
+                    </form>
+                </div>
+               </div>
+               <div class="card d-none" id="formulario-video-externo">
+                <div class="card-header">
+                    <center><h6>Subir video externo</h6></center>
+                </div>
+                <div class="card-body">
+                    <form action="aplicacion/controllers/routes/routes.php" method="post">
+                   
+                        <div class="form-group col-xl-6 col-md-6 col-sm-12 col-12 p-1 mt-2 mb-2" style="float:left;">
+                            <label for="">Nombre del elemento</label>
+                            <input type="text" class="form-control" placeholder="Nombre del elemento" required name="nombre_elemento">
+                            <input type="hidden" name="peticion" value="5">
+                        </div>
+                        <div class="form-group col-xl-6 col-md-6 col-sm-12 col-12 p-1 mt-2 mb-2" style="float:left;">
+                            <label for="">Url externa a subir (IFRAME)</label>
+                            <input type="text" class="form-control" required name="ruta_externa">
+                        </div>
+                       
+                        <div class="form-group">
+                            <center> <button type="submit" class="btn btn-success text-center">Subir archivo</button></center>
+                        </div>
+    
+                    </form>
+                </div>
+               </div>
+            </div>
+        </div>
+    </div>
+  
+</div>
+<script>
+
+$(document).ready(function(){
+// Controlador de formularios segun el caso del tipo de archivo que se quiera subir
+
+$("#tipo_formulario_multimedia_carga").change(function(){
+
+   var valor_select = $(this).val();
+  
+   if(valor_select == 1){
+
+    $("#formulario-imagen-externa , #formulario-video-externo").removeClass("d-block");
+    $("#formulario-imagen-externa , #formulario-video-externo").addClass("d-none");
+    
+    $("#formulario-imagen-interna").removeClass("d-none");
+    $("#formulario-imagen-interna").addClass("d-block");
+
+   }
+
+   if(valor_select == 2){
+
+$("#formulario-imagen-interna , #formulario-video-externo").removeClass("d-block");
+$("#formulario-imagen-interna , #formulario-video-externo").addClass("d-none");
+
+$("#formulario-imagen-externa").removeClass("d-none");
+$("#formulario-imagen-externa").addClass("d-block");
+
+}
+
+if(valor_select == 3){
+
+$("#formulario-imagen-interna , #formulario-imagen-externa").removeClass("d-block");
+$("#formulario-imagen-interna , #formulario-imagen-externa").addClass("d-none");
+
+$("#formulario-video-externo").removeClass("d-none");
+$("#formulario-video-externo").addClass("d-block");
+
+}
+
+});
+
+
+
+});
+</script>
+

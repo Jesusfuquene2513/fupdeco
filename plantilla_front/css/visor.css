@@ -1,0 +1,53 @@
+.foto{
+	margin-top: 30px; margin-bottom: 30px;
+}
+@media only screen and (max-width: 600px) {
+
+	.foto{
+		height:250px;
+		
+	}
+	.foto img{
+		height:100%;
+	}
+}
+@media only screen and (min-width: 600px) {
+
+	.foto{
+		height:320px;
+		
+	}
+	.foto img{
+		height:100%;
+	}
+}
+@media only screen and (min-width: 768px) {
+
+	.foto{
+		height:250px;
+		
+	}
+	.foto img{
+		height:100%;
+	}
+}
+@media only screen and (min-width: 992px) {
+
+	.foto{
+		height:250px;
+		
+	}
+	.foto img{
+		height:100%;
+	}
+}
+@media only screen and (min-width: 1200px) {
+
+	.foto{
+		height:270px;
+		
+	}
+	.foto img{
+		height:100%;
+	}
+}

@@ -1,0 +1,53 @@
+.single-blog-img{
+	
+	width: 35%;
+	
+}
+.single-blog-img img{
+
+	
+	padding-left: 10px; padding-right: 10px;
+
+}
+
+.single-blog-img span{
+
+	
+	padding-left: 10px; padding-right: 10px;
+
+}
+
+
+
+.blog-content p{
+	
+}
+
+@media only screen and (min-width: 992px) {
+	
+	#blog-img{
+		width:100%;
+	}
+
+	#blog-contenido{
+		width:100%;
+		text-align: justify;
+	}
+}
+
+
+@media only screen and (min-width: 1200px) {
+		#blog-img{
+		width:100%;
+	}
+
+	#blog-contenido{
+		width:100%;
+		text-align: justify;
+	}
+
+	.publicacion{
+		float:left;
+		width:50%;
+	}
+}

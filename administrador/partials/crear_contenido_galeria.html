@@ -1,0 +1,188 @@
+<div class="row" >
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 m-auto">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="text-center text-light" style="position:relative; top:4px">Creación de Elemento para album</h4>
+            </div>
+            <div class="card-body">
+                <form action="aplicacion/controllers/routes/routes.php" method="post">
+                    <div class="form-group col-xl-12 col-md-12 col-sm-12 col-12 p-1 mt-2 mb-2" style="float:left;">
+                        <label for="">Nombre del Elemento</label>
+                        <input type="text" class="form-control" placeholder="Nombre del elemento de album" required name="elemento_nombre">
+                        <input type="hidden" value="48" name="peticion">
+                    </div>
+
+                    <div class="form-group  p-1 mt-2 mb-2">
+                        <label for="">Album de destino</label>
+                        <select name="album_id" class="form-control" id="sel-albumnes">
+                            
+                        </select>
+                        
+                    </div>
+                    
+                    <div class="p-1">
+                        <label for="">Cargar imagen del elemento</label>
+                        <div class="card">
+                            <div class="card-body">
+                                <center><span class="text-center">Archivos multimedia</span></center>
+                                <input type="text" class="form-control d-none" placeholder="SELECCION" id="ruta-seleccionada" required name="portada">
+                                <input type="text" class="form-control" id="ruta-visible" disabled value="No se ha seleccionado ninguna ruta" style="color:red; font-weight:bolder"  >
+                                <input type="text" class="tipo-archivo-sel d-none" name="tipo_archivo_sel">
+                                <button class="btn btn-primary" type="button" style="width:100%" id="abrir-multimedia">Abrir galería +</button>
+                            </div>
+                            <div class="card-body">
+                                <div class="row" id="contenedor-carga">
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <center> <button type="button" id="guardar-album" class="btn btn-success text-center" style="position:fixed; bottom:0; right:0; height:75px; width:75px; border-radius:50%; font-size:30px"><span class="fa fa-check-square"></span></button></center>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+
+$(document).ready(function(){
+
+
+var estado_album = 0;
+
+
+     $.ajax({
+            type: 'POST',  // Envío con método POST
+            url: 'aplicacion/controllers/routes/routes.php',  // Fichero destino (el PHP que trata los datos)
+            data: { peticion: 47 } // Datos que se envían
+        }).done(function (msg) {  // Función que se ejecuta si todo ha ido bien
+
+            $("#sel-albumnes").html(msg);
+
+            $("#sel-albumnes").change(function(){
+
+                var album_id = $(this).val();
+                
+
+                if(album_id > 0){
+
+                    estado_album = 1;
+                     $("#guardar-album").attr("type","submit");
+
+                } else{
+                    $("#guardar-album").attr("type","button");
+                     estado_album = 0;
+                }
+
+            });
+
+
+
+        }).fail(function (jqXHR, textStatus, errorThrown) { // Función que se ejecuta si algo ha ido mal
+            // Mostramos en consola el mensaje con el error que se ha producido
+            //$("#listado-archivos-multimedia").html("The following error occured: " + textStatus + " " + errorThrown);
+
+
+        });
+
+
+
+$("#guardar-album").click(function(){
+if(estado_album == 0){
+    alert("Debes seleccionar un album y/o completar la informacion");
+
+}
+});
+
+
+
+
+
+
+    $("#contenedor-carga").hide();
+    // Carga los archivos multimedia para usarse
+    var acumulador = 0;
+$("#abrir-multimedia").click(function(){
+    $("#contenedor-carga").toggle();
+    
+    if ($('#contenedor-carga').is(':visible')) {
+   $("#abrir-multimedia").text("Cerrar Galería -");
+} else {
+    $("#abrir-multimedia").text("Abrir Galería +");
+}
+
+if(acumulador == 0){
+
+    cargar_archivos_multimedia();
+
+    acumulador = 1;
+
+    
+
+}
+});
+
+
+function cargar_archivos_multimedia(){
+    $.ajax({
+            type: 'POST',  // Envío con método POST
+            url: 'aplicacion/controllers/routes/routes.php',  // Fichero destino (el PHP que trata los datos)
+            data: { peticion: 6 } // Datos que se envían
+        }).done(function (msg) {  // Función que se ejecuta si todo ha ido bien
+
+            $("#contenedor-carga").html(msg);  // Escribimos en el div consola el mensaje devuelto
+            $(".imagen-archivo").each(function () {
+
+                var tipo_elemento = $(this).attr("id");
+                if (tipo_elemento == 1) {
+                    var ruta = $(this).attr("src");
+                    var ruta_nueva = ruta.slice(28)
+                    var new_string = "aplicacion/biblioteca/multimedia/" + ruta_nueva;
+                    $(this).attr("src", new_string);
+                }
+
+                if (tipo_elemento == 3) {
+
+                    $(this).parent().remove();
+                }
+
+
+            });
+
+            $(".capa").click(function(){
+var ruta_imagen_carga = $(this).parent().children(".imagen-archivo").attr("src");
+
+$(".imagen-archivo").css("border","none");
+$(this).parent().children(".imagen-archivo").css("border","solid 2px red");
+$("#ruta-seleccionada").removeAttr("disabled");
+$("#ruta-seleccionada").val(ruta_imagen_carga);
+$("#ruta-visible").val(ruta_imagen_carga);
+//$("#ruta-seleccionada").attr("disabled","disabled");
+var tipo_elemento = $(this).parent().children(".imagen-archivo").attr("id");
+$(".tipo-archivo-sel").val(tipo_elemento);
+
+
+});
+
+
+
+        }).fail(function (jqXHR, textStatus, errorThrown) { // Función que se ejecuta si algo ha ido mal
+            // Mostramos en consola el mensaje con el error que se ha producido
+            $("#listado-archivos-multimedia").html("The following error occured: " + textStatus + " " + errorThrown);
+
+
+        });
+};
+
+// Selecciona un archivo y agrega la ruta para su utilizacion
+
+
+
+});
+</script>

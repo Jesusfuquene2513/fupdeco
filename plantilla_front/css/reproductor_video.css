@@ -1,0 +1,85 @@
+
+
+body{
+    overflow-x:hidden;
+}
+
+#reproductor{
+    display:table;
+   
+}
+.video{
+
+    float:left;
+    height:200px;
+   padding: 0px;
+    display: table;
+    
+}
+
+.video .card-body{
+   padding-right: 40px; padding-left: 40px;
+   font-size: 13px;
+}
+
+.video2{
+    width:100%;
+    height:100%;
+    padding: 0px;
+}
+
+ .card-footer{
+    text-align: center;
+
+}
+.card-footer span{
+  color:#242c5c;
+  font-weight: bolder;
+
+}
+
+
+
+ .controls {
+    position: relative;
+    bottom: 40px;
+    width: 95%;
+    margin:auto;
+    display: flex;
+    justify-content: space-around;
+  
+    transition: opacity 0.4s;
+    display:none;
+  
+}
+.controls:hover {
+    opacity: 1;
+}
+.controls button {
+    background: transparent;
+    color: #fff;
+    font-weight: bolder;
+    text-shadow: 2px 1px 2px #000;
+    border: none;
+    cursor: pointer;
+}
+ .controls .timeline {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-right: 3px solid #ccc;
+    border-left: 3px solid #ccc;
+}
+.controls .timeline .bar{
+    background: rgb(1, 1, 65);
+    height: 4px;
+    flex: 1;
+}
+ .controls .timeline .bar .inner{
+    background: #ccc;
+    width: 0%;
+    height: 100%;
+}
+
+

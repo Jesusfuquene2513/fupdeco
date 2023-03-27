@@ -1,0 +1,38 @@
+.boton-primario{
+background: #2ea3f2;
+}
+.btn-servicio{
+	background:#2ea3f2; color:white;
+	border-radius: 30px;
+	padding: 10px;
+	font-weight: bolder;
+	
+margin:5px;
+	text-align: center;
+
+	font-size: 15px;
+
+
+}
+
+.btn-reserva{
+	background: #242c5c;
+	color:white;
+}
+
+.btn-servicio:hover{
+	color:#242c5c;
+	font-weight: bolder;
+
+}
+
+.btn-servicio2{
+	background:#242c5c;
+	color:white;
+	padding-top: 5px; padding-bottom: 5px;
+
+}
+
+btn-servicio2:hover{
+	background:#242c5c;
+}

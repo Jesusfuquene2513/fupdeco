@@ -1,0 +1,171 @@
+<div class="row">
+    <div class="col-xl-12 col-lg-21 col-md-12 col-sm-12 col-12  m-auto">
+        <div class="card table-responsive">
+            <div class="card-header">
+                <h4 class="text-center text-light" style="position:relative; top:4px">Listado Contactos</h4>
+            </div>
+            <div class="card-body table-responsive">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center"
+                                style="border:solid 0.5px gray; text-decoration:underline">Codigo</th>
+                            <th scope="col" class="text-center"
+                                style="border:solid 0.5px gray; text-decoration:underline">Nombre completo</th>
+
+                            <th scope="col" class="text-center"
+                                style="border:solid 0.5px gray; text-decoration:underline">Tipo Doc</th>
+                            <th scope="col" class="text-center"
+                                style="border:solid 0.5px gray; text-decoration:underline">Documento</th>
+                            <th scope="col" class="text-center"
+                                style="border:solid 0.5px gray; text-decoration:underline">Teléfono</th>
+                            <th scope="col" class="text-center"
+                                style="border:solid 0.5px gray; text-decoration:underline">Correo</th>
+                            <th scope="col" class="text-center"
+                                style="border:solid 0.5px gray; text-decoration:underline">Departamento</th>
+                            <th scope="col" class="text-center"
+                                style="border:solid 0.5px gray; text-decoration:underline">Municipio</th>
+                            <th scope="col" class="text-center"
+                                style="border:solid 0.5px gray; text-decoration:underline">Consulta</th>
+                            <th scope="col" class="text-center"
+                                style="border:solid 0.5px gray; text-decoration:underline">Fecha petición</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider" id="listado-contactos">
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div id="res"></div>
+
+<script>
+    $(document).ready(function () {
+
+        iniciar_listado();
+        function iniciar_listado() {
+            listar_departamentos();
+            renombrar_departamentos();
+        };
+
+
+        function listar_departamentos() {
+            $.ajax({
+                type: 'POST',  // Envío con método POST
+                url: 'aplicacion/controllers/routes/routes.php',  // Fichero destino (el PHP que trata los datos)
+                data: { peticion: 29 } // Datos que se envían
+            }).done(function (msg) {  // Función que se ejecuta si todo ha ido bien
+
+                $("#listado-contactos").html(msg);  // Escribimos en el div consola el mensaje devuelto
+
+
+
+$(".doc").each(function(){
+
+    var doc = $(this).text();
+
+    if(doc == "1"){
+
+        $(this).text("Cedula de Ciudadania");
+
+    }
+
+    if(doc == "2"){
+
+        $(this).text("Cedula de Extrangeria");
+
+    }
+
+    if(doc == "3"){
+
+        $(this).text("Pasaporte");
+
+    }
+
+    if(doc == "4"){
+
+        $(this).text("NIT");
+
+    }
+
+});
+
+
+
+
+                $(".dep").each(function () {
+                    var departamento = $(this).text();
+
+
+                    $.ajax({
+                        type: 'POST',  // Envío con método POST
+                        url: 'aplicacion/controllers/routes/routes.php',  // Fichero destino (el PHP que trata los datos)
+                        data: { peticion: 30, departamento_id: departamento } // Datos que se envían
+                    }).done(function (msg2) {  // Función que se ejecuta si todo ha ido bien
+
+                        $("#data-dep").append(msg2);
+                        // Escribimos en el div consola el mensaje devuelto
+
+
+
+
+
+
+
+
+
+
+
+                    }).fail(function (jqXHR, textStatus, errorThrown) { // Función que se ejecuta si algo ha ido mal
+                        // Mostramos en consola el mensaje con el error que se ha producido
+                        //$("#listado-contactos").html("The following error occured: " + textStatus + " " + errorThrown);
+
+
+                    });
+
+
+
+                });
+
+
+
+
+
+
+
+            }).fail(function (jqXHR, textStatus, errorThrown) { // Función que se ejecuta si algo ha ido mal
+                // Mostramos en consola el mensaje con el error que se ha producido
+                $("#listado-contactos").html("The following error occured: " + textStatus + " " + errorThrown);
+
+
+            });
+
+        };
+
+        function renombrar_departamentos() {
+            $(".dep-con").each(function() {
+                alert("HOla");
+            });
+        };
+
+
+
+
+
+
+
+
+
+
+
+
+    });
+</script>
+<div id="data-dep"></div>

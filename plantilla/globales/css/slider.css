@@ -1,0 +1,10 @@
+@media only screen and (min-width: 1200px) {
+    
+    #dinamico{
+        
+        height:750px;
+    }
+    #dinamico img{
+        height:750px;
+    }
+}
